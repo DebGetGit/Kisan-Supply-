@@ -25,7 +25,7 @@ India is an agriculture based non-industrial nation. Data spread to the informat
 18.• Admin Item views page
 19.• Machine Learning Modules
 
-# B.Platforms used:(Technical Specifications)
+# Platforms used:(Technical Specifications)
 Use Platforms used:
 HTML
 CSS
