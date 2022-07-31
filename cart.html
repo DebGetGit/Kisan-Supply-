@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Kisan Supply - Cart</title> 
+<link rel="stylesheet" type="text/css" href="css/agro.css"> 
+</head> 
+<body> 
+<header> 
+<div class="main"> 
+<div class="logo"> 
+<a href="index.php"><img src="images\logo.png"></a> 
+</div> 
+<ul> 
+<!-- <li><a href="agro.php">Back</a></li> 
+<li><a href="agro.php">Agro</a></li>  -->
+<!-- <li><a href="myorders.php">My Orders</a></li>  -->
+<li><a href="contact_us.html">Contact Us</a></li> 
+<li><a href="logout.php" >Logout</a></li> 
+<li><a href="payment.html" >Payment</a></li> 
+</ul> 
+</div> 
+</header> 
+<div class="title"> 
+<br> 
+<table width="100%" border="1" cellspacing="0" cellpadding="6"> 
+<tr> 
+  <td width="20%" bgcolor="#FFFFFF">Image</td>
+<td width="20%" bgcolor="#FFFFFF">Product</td> 
+<td width="24%" bgcolor="#FFFFFF">Type</td> 
+<td width="18%" bgcolor="#FFFFFF">Unit Price</td> 
+<td width="10%" bgcolor="#FFFFFF">Quantity</td> 
+<td width="18" bgcolor="#FFFFFF">Total</td> 
+<td width="10%" bgcolor="#FFFFFF">Remove</td> 
+</tr> 
+<tr> 
+  <td width='30%' valign='top'><img 
+    style='border:#666 1px solid;' src="images/P2.jpg" alt=".$pname." width='250' 
+    height='300' border='1'></td> 
+  <td width="20%" bgcolor="#FFFFFF">P001</td> 
+  <td width="24%" bgcolor="#FFFFFF">Fertilizer</td> 
+  <td width="18%" bgcolor="#FFFFFF">Rs. 50/-</td> 
+  <td width="10%" bgcolor="#FFFFFF">100</td> 
+  <td width="18" bgcolor="#FFFFFF">5000</td> 
+  <td width="10%" bgcolor="#FFFFFF">Remove</td> 
+  </tr> 
+<!-- <?php echo $cartOutput; ?> 
+</table> 
+<br> 
+<br> 
+<?php echo $cartTotalStyle; ?> 
+<br> 
+<br> 
+<?php 
+if($flag!=1) 
+{ 
+?>  -->
+<h4><a href="agro.php" style="color: white;text-decoration:none;">Continue Shopping</a></h4><br> 
+<h4><a href="cart.php?cmd=emptycart" style="color: white;text-decoration:none;">Delete 
+your Cart</a></h4> 
+<!-- <?php 
+$MERCHANT_KEY = "gtKFFx"; 
+$SALT = "eCwWELxi"; 
+$txnid=substr(md5(time()), 0, 19); 
+$name="Niharika"; 
+$email="moturu.niharika2017@vitstudent.ac.in"; 
+$amount=$cartTotal; 
+if($_SESSION['agri_card']!=""){ 
+$amount=$amount-0.2*$amount; 
+} 
+$phone="8919804383"; 
+$surl="http://localhost/agro/cart.php"; 
+$furl="http://localhost/agro/cart.php"; 
+$productInfo="AgroProducts"; 
+// Merchant Salt as provided by Payu 
+$hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|
+udf10"; 
+$hashString=$MERCHANT_KEY."|".$txnid."|".$amount."|".$productInfo."|".$name."|".$email."|||||||||||".$SA 
+LT; 
+$hash = strtolower(hash('sha512', $hashString)); 
+?>  -->
+<form action="https://sandboxsecure.payu.in/_payment" name="payuform" method=POST > 
+<input type="hidden" name="key" value="<?php echo $MERCHANT_KEY;?>" /> 
+<input type="hidden" name="hash" value="<?php echo $hash; ?>" /> 
+<input type="hidden" name="txnid" value="<?php echo $txnid; ?>"/> 
+<input type="hidden" name="service_provider" value="" /> 
+<input type="hidden" name="amount" value="<?php echo $amount;?>"> 
+<input type="hidden" name="surl" value="<?php echo $surl;?>"/> 
+<input type="hidden" name="furl" value="<?php echo $furl;?>"/> 
+<input type="hidden" name="firstname" value="<?php echo $name;?>"/> 
+<input type="hidden" name="email" value="<?php echo $email;?>"/> 
+<input type="hidden" name="phone" value="<?php echo $phone;?>"/> 
+<input type="hidden" name="productinfo" value="<?php echo $productInfo;?>"/> 
+<br> 
+<input type="submit" value="Proceed to Checkout"/> 
+</form> 
+<br><br> 
+<form method="POST" action="payment.html"> 
+<input type="hidden" name="amount" value="<?php echo $cartTotal; ?>"> 
+<input type="submit" name="submit" value="Sample Checkout"> 
+</form> 
+
+</div> 
+<!-- <div class="footer">
+    <div class="col-sm-4 quicksand whiteback slightlybigger">
+      <p>
+        45 A,<br />4 Esplanade,<br />
+        Kolkata-700021
+      </p>
+    </div>
+    <div>
+      <p>
+        <i class="fa fa-2x fa-map-marker"></i> Copyright ® 2020-2021 to Kissan
+        Supply™
+      </p>
+    </div> -->
+</body> 
+</html>

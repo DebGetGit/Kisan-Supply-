@@ -1,0 +1,208 @@
+<!-- <?php 
+$name=test_input($_POST['name']); 
+$uname=test_input($_POST['uname']); 
+$pass=test_input($_POST['pass']); 
+$email=test_input($_POST['email']); 
+$phno=test_input($_POST['phno']); 
+$card=test_input($_POST['card']); 
+$address=test_input($_POST['address']); 
+
+require_once "config.php";
+
+$sql="insert into user(name,username,password,address,email,phone_no,agri_card) values 
+('$name','$uname','$pass','$address','$email','$phno','$card')"; 
+// if(!mysqli_query($sql)){ 
+// echo "<script> 
+// alert('Error!!!!Create account again'); 
+// window.location='signup.html'; 
+// </script>"; 
+// } 
+// else{ 
+// echo "<script> 
+// alert('Account Created Successfully'); 
+// window.location='signin.html'; 
+// </script>" ; 
+// } 
+
+function test_input($data){ 
+$data=trim($data); 
+$data=stripslashes($data); 
+return $data; 
+} 
+mysqli_close($conn); 
+?> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kisan Supply-Login</title>
+    <link rel="stylesheet" type="text/css" href="css/agro.css" />
+  </head>
+  <body>
+    <header>
+      <div class="main">
+        <div class="logo">
+          <img src="images\logo.png" />
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="admin/admin_login.html">Admin Login</a></li>
+        </ul>
+      </div>
+    </header>
+    
+    <div class="title">
+      <div class="login-page">
+        <div class="form">
+          <form class="login-form" method="POST" action="signup.php">
+            <h3 style="color: #43a047;">SIGN UP:</h3>
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              id="name"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Username"
+              name="uname"
+              id="uname"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="pass"
+              id="pass"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              name="confpass"
+              id="confpass"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              id="email"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Phone Number"
+              name="phno"
+              id="phno"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Adhaar Card Number"
+              name="card"
+              id="card"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Address"
+              name="address"
+              id="address"
+              required
+            />
+            <input
+              type="text"
+              placeholder="PINCODE"
+              name="pincode"
+              id="address"
+              required
+            />
+            <button onclick="return validate();">create</button>
+            <p class="message">
+              Have already registered? <a href="login.php">Sign In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function validate() {
+        var name = document.getElementById("name").value;
+        var username = document.getElementById("uname").value;
+        var password = document.getElementById("pass").value;
+        var phno = document.getElementById("phno").value;
+        var acard = document.getElementById("card").value;
+        var pin = document.getElementById("pincode").value;
+        var patt1 = /[a-zA-Z]/;
+        if (patt1.test(name) == false || name.length > 30) {
+          alert("Enter Valid Name ");
+          //window.location="signup.html";
+          return false;
+        } else {
+          var patt4 = /[a-zA-Z0-9]/;
+          if (patt4.test(username) == false || username.length > 20) {
+            alert("Enter a valid username ");
+            //window.location="signup.html";
+            return false;
+          } else {
+            if (password != document.getElementById("confpass").value) {
+              alert("Password and Confirm Password should be same");
+              //window.location="signup.html";
+              return false;
+            } else {
+              var patt2 = /[A-Z]+[a-z]+[0-9]+/g;
+              if (
+                password.length < 8 ||
+                patt2.test(password) == false ||
+                password.length > 20
+              ) {
+                alert(
+                  "Password should contain more than 8 characters and less than 20 with atleast one Uppercase, LowerCase and a Digit"
+                );
+                //window.location="signup.html";
+                return false;
+              } else {
+                if (phno.length != 10) {
+                  alert("Phone Number is not valid");
+                  //window.location="signup.html";
+                  return false;
+                } else {
+                  var patt3 = /[1-9]{12}/;
+
+                  if (patt3.test(acard) == false) {
+                    alert("Adhaar Details are not valid");
+                    //window.location="signup.html";
+                    return false;
+                  } else {
+                    var patt4 = /[1-9]{6}/;
+                    if (patt4.test(pin)) {
+                      alert("Pincode is wrong!");
+                      //window.location="signup.html";
+                      return false;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <div class="footer">
+      <div class="col-sm-4 quicksand whiteback slightlybigger">
+        <p>
+          45 A,<br />4 Esplanade,<br />
+          Kolkata-700021
+        </p>
+      </div>
+      <div>
+        <p>
+          <i class="fa fa-2x fa-map-marker"></i> Copyright ® 2020-2021 to Kissan
+          Supply™
+        </p>
+      </div>
+  </body>
+</html>

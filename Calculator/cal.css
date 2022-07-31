@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 0.5;
+  font-family: sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../css/mainback.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.calci {
+  width: 800px;
+  padding-top: 100px;
+  padding-bottom: 100;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transition: 0.25px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(36, 7, 7, 0.5);
+}
+#zero {
+  height: 55;
+  width: 116;
+  font-size: 20;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+#display {
+  border: none;
+  background: rgb(221, 180, 125);
+  border-radius: 10px;
+  width: 245;
+  font-size: 20;
+  font-family: sans-serif;
+  font-weight: 300;
+  height: 60;
+  margin: auto;
+  border: 2px solid white(5, 218, 255, 0.726);
+  color: black;
+}
+.button {
+  width: 55;
+  height: 55;
+  padding-top: -1;
+  font-size: 20;
+  border: none;
+  background: rgb(221, 180, 125);
+  font-family: sans-serif;
+  font-weight: 300;
+  border: 0;
+  border-radius: 10px;
+  margin: 1.5;
+  transition: 0.25px;
+}
+
+.operator {
+  width: 55;
+  height: 55;
+  padding-top: -1;
+  font-size: 20;
+  text-align: center;
+  color: black;
+  border: none;
+  background: rgb(221, 180, 125);
+  font-family: sans-serif;
+  font-weight: 500;
+  border: 0;
+  border-radius: 10px;
+  margin: 1.5;
+  transition: 0.25px;
+  cursor: pointer;
+}
+
+.operator:hover {
+  background: #b1891b;
+}
+
+.button:hover {
+  background: #b1891b;
+}
+
+ul {
+  float: right;
+  list-style-type: none;
+  margin: 25px;
+}
+ul li {
+  display: inline-block;
+}
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  transition: 0.5s ease;
+}
+ul li a:hover {
+  background-color: #fff;
+  color: #000;
+}
+ul li.active a {
+  background-color: #fff;
+  color: #000;
+}
+.logo img {
+  float: left;
+  width: 200px;
+  height: auto;
+}
+.main {
+  max-width: 1200px;
+  margin: auto;
+}
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.title h1 {
+  color: #fff;
+  font-size: 70px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(196, 241, 144);
+  color: rgb(107, 80, 5);
+  text-align: center;
+}
