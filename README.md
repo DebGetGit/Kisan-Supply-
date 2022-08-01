@@ -1,4 +1,5 @@
 # Kisan-Supply
+![](images/logo.png)
 The main focus of this project is to make a system that is integrated in both the front end and the back end and gives an end to end solution to both the farmers and the end consumers to access to information that’s needed by them to perform valuable transactions among them.
 
 # Why?
@@ -39,4 +40,9 @@ VS Code Editor
 Xampp Server (For Hosting locally)
 
 # Appendix
-![](images/logo.png)
+![](images/landing.png)
+![](images/admin.png)
+![](images/buy.png)
+![](images/cart.png)
+![](images/data.png)
+![](images/temp.png)
