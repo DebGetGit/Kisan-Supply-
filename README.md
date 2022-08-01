@@ -37,3 +37,6 @@ FLASK LIBRARIES
 EXCEL(To manage the CSV files)
 VS Code Editor
 Xampp Server (For Hosting locally)
+
+# Appendix
+![](images/logo.png)
